@@ -1,4 +1,18 @@
-<div class="p-8">
-  <h1 class="text-3xl font-bold text-slate-800">Buscar Gifs</h1>
-  <p class="text-slate-600 mt-2">Página de búsqueda de gifs</p>
+<div class="flex flex-col">
+  <h2 class="text-2xl font-bold mt-5">Buscar gifs</h2>
+  <h3 class="text-slate-500 text-sm">Busca tus GIFs favoritos</h3>
+
+  <div class="flex flex-col mt-4">
+    <input
+      #txtSearch
+      type="text"
+      placeholder="Buscar GIFs..."
+      class="border border-slate-300 rounded-lg px-4 py-2 outline-none focus:border-blue-500 text-slate-800"
+      (keyup.enter)="onSearch(txtSearch.value)"
+    />
+  </div>
+
+  <section class="py-5">
+    <gifs-gif-list [gifs]="gifs()" />
+  </section>
 </div>
